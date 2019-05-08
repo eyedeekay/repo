@@ -119,19 +119,56 @@ From the host machine, navigate to the tunnel manager, at
 127.0.0.1:7657/i2ptunnelmgr. At the top of the page, select "I2P Tunnel Wizard"
 to begin the process.
 
-At the first menu, select a "Server Tunnel."
-
-At the next menu, select an "HTTP Tunnel."
-
-Give your tunnel a descriptive name, like "F-Droid Repo."
-
-Configure the server tunnel to forward traffic to the local F-Droid repo, which
-will probably be "127.0.0.1:3001."
-
-Select "Automatically start tunnel when router starts" and finish the wizard.
+ 1. At the first menu, select a "Server Tunnel."
+ 2. At the next menu, select an "HTTP Tunnel."
+ 3. Give your tunnel a descriptive name, like "F-Droid Repo."
+ 4. Configure the server tunnel to forward traffic to the local F-Droid repo, which
+  will probably be "127.0.0.1:3001."
+ 5. Select "Automatically start tunnel when router starts" and finish the wizard.
 
 Your F-Droid repo will be available shortly.
 
 Using Unofficial I2P repo from Android
 --------------------------------------
 
+If you want to use F-Droid to retrieve Android applications over i2p, you can
+create a client tunnel pointed at the I2P mirror. Navigate to the tunnel page
+in the I2P android application and take the following steps.
+
+ 1. Begin creating a client tunnel.
+
+![Step one](/android-1.png)
+
+ 2. Select a "Standard Tunnel" so we can point the tunnel at a specific
+  destination.
+
+![Step two](/android-2.png)
+
+ 3. Name and Describe the tunnel.
+
+![Step three](/android-3.png)
+
+ 4. Set the tunnel destination to the value of the F-Droid repository.
+
+![Step four](/android-4.png)
+
+ 5. Set the tunnel to be available to other applications from the local host.
+
+![Step five](/android-5.png)
+
+ 6. Set the port you wish to use for the localhost address of the tunnel.
+
+![Step six](/android-6.png)
+
+ 7. Tell the tunnel to start when the I2P router starts
+
+![Step seven](/android-7.png)
+
+ 8. Review the settings and finalize the tunnel.
+
+![Step eight](/android-8.png)
+
+ 9. Configure your F-Droid client to use the local client tunnel as a
+  repository.
+
+![Step nine](/android-9.png)
