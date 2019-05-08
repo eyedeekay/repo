@@ -1,5 +1,9 @@
 
-all: build clean run
+
+all: index build clean run
+
+index:
+	markdown README.md > index.html
 
 build:
 	docker build -t eyedeekay/fdroid-repo .

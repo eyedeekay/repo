@@ -1,7 +1,7 @@
 FROM alpine
 RUN apk update
 RUN apk add lighttpd
-COPY REPO /var/www/localhost/htdocs/repo
+COPY . /var/www/localhost/htdocs/repo
 COPY lighttpd.docker.conf /etc/lighttpd/lighttpd.conf
 RUN mkdir -p /run/lighttpd/ && \
     chown -R lighttpd /run/lighttpd
