@@ -19,6 +19,11 @@ even *actually* necessary to run fdroidserver or anything like that to make your
 repo available. All you really need to do is re-generate the repository metadata
 and transfer it to a server that will host the resulting static site.
 
+See also
+--------
+
+  * [F-Droid's own tutorial](https://f-droid.org/en/docs/Setup_an_F-Droid_App_Repo/)
+
 Github Procedure
 ----------------
 
@@ -51,3 +56,9 @@ and push them up to the page.
 
         git push origin master
 
+Local Procedure
+---------------
+
+For hosting it locally I've used Docker, just because I'm a neat-freak mostly.
+There's nothing stopping anyone from using any web server. Any and all HTTP
+servers that exist should be capable of hosting an F-Droid repo,
