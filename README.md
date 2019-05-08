@@ -137,38 +137,38 @@ in the I2P android application and take the following steps.
 
  1. Begin creating a client tunnel.
 
-![Step one](/android-1.png)
+![Step one](./android-1.png)
 
  2. Select a "Standard Tunnel" so we can point the tunnel at a specific
   destination.
 
-![Step two](/android-2.png)
+![Step two](./android-2.png)
 
  3. Name and Describe the tunnel.
 
-![Step three](/android-3.png)
+![Step three](./android-3.png)
 
  4. Set the tunnel destination to the value of the F-Droid repository.
 
-![Step four](/android-4.png)
+![Step four](./android-4.png)
 
  5. Set the tunnel to be available to other applications from the local host.
 
-![Step five](/android-5.png)
+![Step five](./android-5.png)
 
  6. Set the port you wish to use for the localhost address of the tunnel.
 
-![Step six](/android-6.png)
+![Step six](./android-6.png)
 
  7. Tell the tunnel to start when the I2P router starts
 
-![Step seven](/android-7.png)
+![Step seven](./android-7.png)
 
  8. Review the settings and finalize the tunnel.
 
-![Step eight](/android-8.png)
+![Step eight](./android-8.png)
 
  9. Configure your F-Droid client to use the local client tunnel as a
   repository.
 
-![Step nine](/android-9.png)
+![Step nine](./android-9.png)
