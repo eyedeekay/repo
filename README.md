@@ -68,7 +68,11 @@ simple one you're familiar with. For me, that's lighttpd.
 
 With docker and make installed copy the Dockerfile, .dockerignore,
 lighttpd.docker.conf, and Makefile from this repository into your F-Droid
-repository directory.
+repository directory. *Please note that the **.dockerignore** is as essential*
+*to the security of your repository as the previous .gitignore.* Without it you
+will be serving both your keystore and your keystore password. It is *strongly*
+advised that you remove these files entirely from production servers(as I have
+on mine).
 
         wget -O Dockerfile https://github.com/eyedeekay/repo/raw/master/Dockerfile
         wget -O .dockerignore https://github.com/eyedeekay/repo/raw/master/.dockerignore
@@ -81,7 +85,14 @@ and run
 
 An index page will be created by parsing your README.md into an index.html
 documen and a docker container will be built and started, forwarding lighttpd
-to the host on port 3001.
+to the host on port 3001. To change the port, edit lighttpd.conf
+
+In order to use rsync to transfer the files to a production server via ssh, you
+can use the command in lieu of the .dockerignore file
+
+        rsync a -e ssh --exclude='*.ks,*.jks,*.keystore,*.crt,config.py,tmp,.git' $USER@$SERVER:$PATH
+
+This will exclude the copying of sensitive data to the production server.
 
 Forwarding to I2P
 -----------------
@@ -89,5 +100,5 @@ Forwarding to I2P
 Complete the local procedure.
 
 From the host machine, navigate to the tunnel manager, at
-127.0.0.1:7657/i2ptunnelmgrs.
+127.0.0.1:7657/i2ptunnelmgr.
 
