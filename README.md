@@ -89,5 +89,5 @@ Forwarding to I2P
 Complete the local procedure.
 
 From the host machine, navigate to the tunnel manager, at
-127.0.0.1:7657/i2ptunnelmgr.
+127.0.0.1:7657/i2ptunnelmgrs.
 
