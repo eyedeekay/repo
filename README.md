@@ -61,4 +61,33 @@ Local Procedure
 
 For hosting it locally I've used Docker, just because I'm a neat-freak mostly.
 There's nothing stopping anyone from using any web server. Any and all HTTP
-servers that exist should be capable of hosting an F-Droid repo,
+servers that exist should be capable of hosting an F-Droid repo, so pick a
+simple one you're familiar with. For me, that's lighttpd.
+
+#### TL:DR
+
+With docker and make installed copy the Dockerfile, .dockerignore,
+lighttpd.docker.conf, and Makefile from this repository into your F-Droid
+repository directory.
+
+        wget -O Dockerfile https://github.com/eyedeekay/repo/raw/master/Dockerfile
+        wget -O .dockerignore https://github.com/eyedeekay/repo/raw/master/.dockerignore
+        wget -O lighttpd.docker.conf https://github.com/eyedeekay/repo/raw/master/lighttpd.docker.conf
+        wget -O Makefile https://github.com/eyedeekay/repo/raw/master/Makefile
+
+and run
+
+        make
+
+An index page will be created by parsing your README.md into an index.html
+documen and a docker container will be built and started, forwarding lighttpd
+to the host on port 3001.
+
+Forwarding to I2P
+-----------------
+
+Complete the local procedure.
+
+From the host machine, navigate to the tunnel manager, at
+127.0.0.1:7657/i2ptunnelmgr.
+
