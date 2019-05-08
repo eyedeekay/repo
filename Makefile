@@ -6,6 +6,9 @@ index:
 	markdown README.md > index.html
 
 build:
+	fdroid update --create-metadata
+
+docker: build
 	docker build -t eyedeekay/fdroid-repo .
 
 clean:
