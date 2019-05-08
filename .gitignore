@@ -3,3 +3,4 @@
 *.keystore
 *.crt
 config.py
+tmp
