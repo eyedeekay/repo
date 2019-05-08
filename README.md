@@ -39,7 +39,23 @@ into the newly closed repo and type
 
         fdroid init
 
-Which will obviously initialize your F-Droid repo locally. Then you take the APK
+Which will obviously initialize your F-Droid repo locally. It creates keys and
+a configuration file intended to be used together to manage releases on the
+repository, these should *not* be included in the repository, hence the
+.gitignore. Besides that, there is a file called config.py, which you should
+alter to include your repository details, something like this:
+
+        repo_url = "http://arajj5rcgaijhyafv7iklzpqmlibh4ugyuxmo6i2fekxcpb3zkca.b32.i2p"
+        repo_name = "Unofficial I2P Dev Builds"
+        repo_icon = "fdroid-icon.png"
+        repo_description = """
+        This is a repository of apps to be used with F-Droid. It contains the
+        nightly development builds of I2P and I2P-Bote built by eyedeekay.
+        """
+        ### Do this to disable archiving of old builds.
+        archive_older = 0
+
+Then you take the APK
 files that you want to host, and copy them into the 'repo' directory that was
 created by ```fdroid init```. Once you have all your apk files in the repo
 directory, run the command
@@ -68,11 +84,11 @@ simple one you're familiar with. For me, that's lighttpd.
 
 With docker and make installed copy the Dockerfile, .dockerignore,
 lighttpd.docker.conf, and Makefile from this repository into your F-Droid
-repository directory. *Please note that the **.dockerignore** is as essential*
-*to the security of your repository as the previous .gitignore.* Without it you
-will be serving both your keystore and your keystore password. It is *strongly*
-advised that you remove these files entirely from production servers(as I have
-on mine).
+repository directory. [*Please note that the **.dockerignore**](https://github.com/eyedeekay/repo/raw/master/.gitignore)*
+*is as essential to the security of your repository as the previous .gitignore.*
+Without it you will be serving both your keystore and your keystore password to
+everyone. It is *strongly* advised that you remove these files entirely from
+production servers(as I have on mine).
 
         wget -O Dockerfile https://github.com/eyedeekay/repo/raw/master/Dockerfile
         wget -O .dockerignore https://github.com/eyedeekay/repo/raw/master/.dockerignore
@@ -100,5 +116,22 @@ Forwarding to I2P
 Complete the local procedure.
 
 From the host machine, navigate to the tunnel manager, at
-127.0.0.1:7657/i2ptunnelmgr.
+127.0.0.1:7657/i2ptunnelmgr. At the top of the page, select "I2P Tunnel Wizard"
+to begin the process.
+
+At the first menu, select a "Server Tunnel."
+
+At the next menu, select an "HTTP Tunnel."
+
+Give your tunnel a descriptive name, like "F-Droid Repo."
+
+Configure the server tunnel to forward traffic to the local F-Droid repo, which
+will probably be "127.0.0.1:3001."
+
+Select "Automatically start tunnel when router starts" and finish the wizard.
+
+Your F-Droid repo will be available shortly.
+
+Using Unofficial I2P repo from Android
+--------------------------------------
 
