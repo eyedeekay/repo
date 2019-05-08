@@ -1,0 +1,5 @@
+*.ks
+*.jks
+*.keystore
+*.crt
+config.py
