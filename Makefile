@@ -1,6 +1,6 @@
 
 
-all: index build clean run
+all: index docker clean run
 
 index:
 	markdown README.md > index.html
