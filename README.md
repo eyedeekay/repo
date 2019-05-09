@@ -19,6 +19,14 @@ even *actually* necessary to run fdroidserver or anything like that to make your
 repo available. All you really need to do is re-generate the repository metadata
 and transfer it to a server that will host the resulting static site.
 
+Dependencies
+------------
+
+The applications you'll need are all in the fdroiserver package on Debian and
+Ubuntu.
+
+        sudo apt-get install fdroiserver
+
 See also
 --------
 
