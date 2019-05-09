@@ -8,7 +8,7 @@ index:
 build:
 	fdroid update --create-metadata
 
-docker: build
+docker:
 	docker build -t eyedeekay/fdroid-repo .
 
 clean:
@@ -27,6 +27,7 @@ git-update:
 	mkdir -p ../.repo-tmp/
 	cp -rv ./repo/* ../.repo-tmp/
 	git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch -r \*.apk' --prune-empty -- --all
+	git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch -r \*.jar' --prune-empty -- --all
 	cp -rv ../.repo-tmp/* ./repo
 	fdroid update --create-metadata
 	git add .
