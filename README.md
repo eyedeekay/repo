@@ -107,6 +107,10 @@ production servers(as I have on mine).
         wget -O lighttpd.docker.conf https://github.com/eyedeekay/repo/raw/master/lighttpd.docker.conf
         wget -O Makefile https://github.com/eyedeekay/repo/raw/master/Makefile
 
+and edit config.py to use the local repo_url:
+
+        repo_url = "https://127.0.0.1:3001"
+
 and run
 
         make
