@@ -8,6 +8,13 @@ index:
 build:
 	fdroid update --create-metadata
 
+i2p-build:
+	mv config.py github-config.py
+	mv i2p-config.py config.py
+	make build
+	mv config.py i2p-config.py
+	mv github-config.py config.py
+
 docker:
 	docker build -t eyedeekay/fdroid-repo .
 

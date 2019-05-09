@@ -2,7 +2,11 @@ Unofficial semi-nightly F-Droid Repo
 ====================================
 
 This is an UNOFFICIAL repository for development builds of i2p and i2p-bote on
-Android.
+Android. It is also available at
+
+        http://arajj5rcgaijhyafv7iklzpqmlibh4ugyuxmo6i2fekxcpb3zkca.b32.i2p
+
+but read these instructions first.
 
 What this is
 ------------
@@ -53,7 +57,7 @@ repository, these should *not* be included in the repository, hence the
 .gitignore. Besides that, there is a file called config.py, which you should
 alter to include your repository details, something like this:
 
-        repo_url = "http://arajj5rcgaijhyafv7iklzpqmlibh4ugyuxmo6i2fekxcpb3zkca.b32.i2p"
+        repo_url = "https://eyedeekay.github.io/repo"
         repo_name = "Unofficial I2P Dev Builds"
         repo_icon = "fdroid-icon.png"
         repo_description = """
@@ -121,7 +125,11 @@ This will exclude the copying of sensitive data to the production server.
 Forwarding to I2P
 -----------------
 
-Complete the local procedure.
+Complete the local procedure, but when you edit the config.py, make sure that
+you set the repo_url option to reflect a local port that you will connect a
+standard tunnel to on the Android device.
+
+        repo_url = "https://127.0.0.1:7889"
 
 From the host machine, navigate to the tunnel manager, at
 127.0.0.1:7657/i2ptunnelmgr. At the top of the page, select "I2P Tunnel Wizard"
