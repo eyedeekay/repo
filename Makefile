@@ -28,4 +28,5 @@ git-update:
 	git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch -r \*.apk' --prune-empty -- --all
 	cp -rv ../.repo-tmp/* ./repo
 	fdroid update --create-metadata
+	git add .
 	git commit -am "git update $(DATE)"
